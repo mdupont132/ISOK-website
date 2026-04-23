@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISOK – International Special Operations K-9 Training Academy | Edgewood, NM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 13px; }
+    body { font-family: 'Open Sans', sans-serif; background: #080808; color: #e8e8e8; line-height: 1.7; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    :root { --gold:#c9a227; --gold-lt:#e0b840; --blue:#1d4e89; --blue-lt:#2563b0; --olive:#4a6028; --olive-lt:#5a7a30; --dark:#060606; --dark2:#0e0e0e; --dark3:#151515; --dark4:#1e1e1e; --border:#2a2a2a; --border-lt:#383838; --text:#d8d8d8; --muted:#7a7a7a; }
+    .container { max-width:1440px; margin:0 auto; padding:0 3rem; }
+    .section { padding:65px 0; }
+    /* Military section header decoration */
+    .mil-header { display:flex; align-items:center; gap:1rem; margin-bottom:.6rem; }
+    .mil-header::before { content:''; flex:0 0 3px; height:18px; background:var(--gold); }
+    .mil-header span { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.62rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); opacity:.7; }
+    .tag { display:inline-block; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(201,162,39,.5); background:rgba(201,162,39,.06); padding:.22rem .8rem; margin-bottom:.8rem; }
+    .section-title { font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.2vw,2.4rem); line-height:1.1; text-transform:uppercase; color:#fff; letter-spacing:.02em; }
+    .section-title span { color:var(--gold); }
+    .section-sub { font-size:.88rem; color:var(--muted); max-width:700px; margin-top:.6rem; line-height:1.85; }
+    .gold-line { display:flex; align-items:center; gap:.5rem; margin:1rem 0 1.5rem; }
+    .gold-line::before { content:''; display:block; width:40px; height:2px; background:var(--gold); }
+    .gold-line::after { content:''; display:block; width:8px; height:8px; background:var(--gold); clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%); }
+    /* Tactical section separator */
+    .tac-divider { display:flex; align-items:center; gap:1rem; padding:1rem 0; }
+    .tac-divider::before,.tac-divider::after { content:''; flex:1; height:1px; background:linear-gradient(to right,transparent,var(--border),transparent); }
+    .tac-divider span { font-family:'Rajdhani',sans-serif; font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); }
+    .btn { display:inline-block; font-family:'Oswald',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; padding:.75rem 2rem; cursor:pointer; transition:all .22s; border:none; clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px)); }
+    .btn-gold { background:var(--gold); color:#000; }
+    .btn-gold:hover { background:var(--gold-lt); transform:translateY(-2px); box-shadow:0 6px 20px rgba(201,162,39,.3); }
+    .btn-outline { background:transparent; color:var(--gold); border:1px solid var(--gold); clip-path:none; }
+    .btn-outline:hover { background:rgba(201,162,39,.1); transform:translateY(-2px); }
+
+    /* NAV */
+    .navbar { position:fixed; top:0; left:0; right:0; z-index:999; display:flex; align-items:center; justify-content:space-between; padding:.8rem 2.5rem; background:rgba(8,8,8,.93); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); }
+    .navbar-logo { display:flex; align-items:center; gap:1rem; }
+    .nl-abbr { font-family:'Oswald',sans-serif; font-weight:700; font-size:1.4rem; color:var(--gold); letter-spacing:.1em; display:block; }
+    .nl-full { font-size:.62rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; line-height:1.4; display:block; }
+    .nav-links { display:flex; align-items:center; gap:1.8rem; list-style:none; }
+    .nav-links a { font-family:'Oswald',sans-serif; font-weight:400; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); transition:color .2s; }
+    .nav-links a:hover { color:var(--gold); }
+    .nav-cta { background:var(--gold) !important; color:#000 !important; padding:.4rem 1.1rem; font-weight:600 !important; }
+
+    /* HERO */
+    .hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; background:linear-gradient(to right,rgba(8,8,8,.97) 0%,rgba(8,8,8,.78) 55%,rgba(8,8,8,.42) 100%), url('https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
+    .hero-bg::before { content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(to bottom,transparent,var(--gold),transparent); }
+    .hero-content { position:relative; z-index:2; max-width:700px; }
+    .hero-eyebrow { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
+    .hero-eyebrow .hl { flex:0 0 40px; height:1px; background:var(--gold); }
+    .hero-eyebrow span { font-family:'Rajdhani',sans-serif; font-weight:600; font-size:.8rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+    .hero-logo-wrap { width:150px; margin-bottom:2rem; filter:drop-shadow(0 0 18px rgba(201,162,39,.35)); }
+    .hero h1 { font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(2rem,3.2vw,3.4rem); line-height:1.05; text-transform:uppercase; color:#fff; letter-spacing:.03em; }
+    .hero h1 em { font-style:normal; color:var(--gold); }
+    .hero-motto { font-family:'Rajdhani',sans-serif; font-weight:600; font-size:1rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin:1rem 0 1.5rem; display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+    .dot { width:5px; height:5px; background:var(--gold); border-radius:50%; display:inline-block; }
+    .hero p { font-size:.88rem; color:#a0a0a0; max-width:540px; margin-bottom:2rem; line-height:1.85; }
+    .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
+    .hero-stats { position:absolute; right:4rem; bottom:5rem; z-index:2; display:flex; flex-direction:column; gap:2rem; }
+    .hs { text-align:right; border-right:3px solid var(--gold); padding-right:1rem; }
+    .hs .num { font-family:'Oswald',sans-serif; font-weight:700; font-size:2.2rem; color:var(--gold); line-height:1; }
+    .hs .lbl { font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+    .hero-scroll { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem; z-index:2; }
+    .hero-scroll span { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); }
+    .scroll-arrow { width:1px; height:40px; background:linear-gradient(to bottom,var(--gold),transparent); animation:sp 1.8s ease-in-out infinite; }
+    @keyframes sp { 0%,100%{opacity:1}50%{opacity:.3} }
+
+    /* STRIP */
+    .stats-strip { background:var(--blue); padding:1.8rem 0; }
+    .strip-inner { display:flex; align-items:center; justify-content:space-around; flex-wrap:wrap; gap:1.5rem; }
+    .si { display:flex; align-items:center; gap:.7rem; }
+    .si-icon { font-size:1.5rem; }
+    .si strong { display:block; font-family:'Oswald',sans-serif; font-weight:700; font-size:1.25rem; color:var(--gold); line-height:1; }
+    .si span { font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.65); }
+
+    /* VIDEO */
+    .video-section { background:var(--dark); padding:65px 0; }
+    .video-wrap { max-width:560px; margin:0 auto; }
+    .video-wrap video { width:100%; border:2px solid var(--gold); display:block; box-shadow:0 0 40px rgba(201,162,39,.2); }
+    .video-label { text-align:center; margin-top:1.2rem; font-family:'Rajdhani',sans-serif; font-weight:600; font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+
+    /* ABOUT */
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+    .img-frame { position:relative; }
+    .img-frame img { width:100%; height:420px; object-fit:cover; border:1px solid var(--border); }
+    .img-corner { position:absolute; top:-1rem; left:-1rem; width:55px; height:55px; border-top:3px solid var(--gold); border-left:3px solid var(--gold); }
+    .img-badge { position:absolute; bottom:-1.5rem; right:-1.5rem; background:var(--gold); color:#000; padding:1.4rem; text-align:center; min-width:130px; }
+    .img-badge .big { font-family:'Oswald',sans-serif; font-weight:700; font-size:2.2rem; line-height:1; }
+    .img-badge .sm { font-size:.65rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-top:.2rem; }
+    .pillars { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+    .pillar { background:var(--dark3); border:1px solid var(--border); border-left:3px solid var(--gold); padding:1rem 1.2rem; }
+    .pillar h4 { font-family:'Oswald',sans-serif; font-weight:600; font-size:.9rem; text-transform:uppercase; color:var(--gold); margin-bottom:.2rem; }
+    .pillar p { font-size:.8rem; color:var(--muted); line-height:1.6; }
+
+    /* FACILITY PHOTOS */
+    .fac-photos { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:220px 220px; gap:.4rem; margin-bottom:2.5rem; }
+    .fp { overflow:hidden; position:relative; }
+    .fp img { width:100%; height:100%; object-fit:cover; transition:transform .5s,filter .5s; filter:brightness(.8) contrast(1.1) saturate(.65); }
+    .fp:hover img { transform:scale(1.04); filter:brightness(.9) contrast(1.1) saturate(.8); }
+    .fp.large { grid-column:span 2; }
+    .fp-lbl { position:absolute; bottom:0; left:0; right:0; padding:.5rem .9rem; background:linear-gradient(to top,rgba(0,0,0,.85),transparent); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); }
+
+    /* FEATURE CARDS */
+    .feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .feat-card { background:var(--dark3); border:1px solid var(--border); border-top:2px solid var(--gold); padding:1.4rem; transition:border-color .3s,background .3s; position:relative; overflow:hidden; }
+    .feat-card::after { content:''; position:absolute; top:0; right:0; width:0; height:0; border-left:20px solid transparent; border-top:20px solid var(--gold); opacity:.3; }
+    .feat-card:hover { background:#1a1a14; border-color:var(--gold); }
+    .feat-card .ficon { font-size:1.5rem; margin-bottom:.5rem; }
+    .feat-card h3 { font-family:'Oswald',sans-serif; font-weight:600; font-size:.88rem; text-transform:uppercase; color:#e0e0e0; margin-bottom:.5rem; letter-spacing:.06em; }
+    .feat-card ul { list-style:none; display:flex; flex-direction:column; gap:.25rem; }
+    .feat-card ul li { font-size:.78rem; color:var(--muted); padding-left:.85rem; position:relative; line-height:1.5; }
+    .feat-card ul li::before { content:'›'; position:absolute; left:0; color:var(--gold); font-weight:700; }
+
+    /* K9 GRID */
+    .prog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2.5rem; }
+    .prog-card { background:var(--dark3); border:1px solid var(--border); overflow:hidden; transition:transform .25s,border-color .25s; }
+    .prog-card:hover { transform:translateY(-3px); border-color:var(--gold); }
+    .prog-card img { width:100%; height:160px; object-fit:cover; filter:brightness(.9) contrast(1.05) saturate(.85); }
+    .prog-card-body { padding:1.1rem 1.2rem; }
+    .prog-card-body h3 { font-family:'Oswald',sans-serif; font-weight:600; font-size:.9rem; text-transform:uppercase; color:#e0e0e0; margin-bottom:.35rem; letter-spacing:.05em; }
+    .prog-card-body p { font-size:.78rem; color:var(--muted); line-height:1.65; }
+    .ptag { display:inline-block; background:var(--gold); color:#000; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; padding:.1rem .5rem; margin-bottom:.5rem; }
+
+    /* TACTICAL */
+    .tac-split { display:grid; grid-template-columns:1fr 1fr; }
+    .tac-img { width:100%; height:100%; min-height:480px; object-fit:cover; filter:brightness(.85) contrast(1.1) saturate(.7); }
+    .tac-content { background:var(--dark3); padding:3rem; display:flex; flex-direction:column; justify-content:center; }
+    .tac-mod { display:flex; gap:.9rem; margin-bottom:1.4rem; padding-bottom:1.4rem; border-bottom:1px solid var(--border); }
+    .tac-mod:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+    .tac-icon { flex:0 0 36px; height:36px; background:var(--gold); display:flex; align-items:center; justify-content:center; font-size:.95rem; color:#000; flex-shrink:0; }
+    .tac-mod h4 { font-family:'Oswald',sans-serif; font-weight:600; font-size:.9rem; text-transform:uppercase; color:#e0e0e0; margin-bottom:.2rem; letter-spacing:.05em; }
+    .tac-mod p { font-size:.78rem; color:var(--muted); line-height:1.65; }
+
+    /* GA */
+    .ga-section { background:linear-gradient(135deg,var(--dark) 0%,#080e1a 100%); border-top:1px solid rgba(37,99,176,.4); border-bottom:1px solid rgba(37,99,176,.4); }
+    .ga-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:3rem; align-items:center; }
+    .ga-stack { position:relative; height:380px; }
+    .ga-stack img:first-child { position:absolute; top:0; left:0; width:78%; height:250px; object-fit:cover; border:1px solid rgba(37,99,176,.5); filter:brightness(.85) saturate(.7); }
+    .ga-stack img:last-child { position:absolute; bottom:0; right:0; width:63%; height:185px; object-fit:cover; border:1px solid var(--gold); filter:brightness(.85) saturate(.7); }
+    .ga-list { list-style:none; margin-top:1.4rem; display:flex; flex-direction:column; gap:.65rem; }
+    .ga-list li { display:flex; align-items:flex-start; gap:.7rem; font-size:.85rem; color:var(--muted); }
+    .ga-list li::before { content:''; flex:0 0 8px; height:8px; background:var(--gold); margin-top:.45rem; }
+
+    /* TEAM */
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .team-card { background:var(--dark3); border:1px solid var(--border); border-top:2px solid rgba(201,162,39,.4); padding:1.4rem; transition:border-color .3s; }
+    .team-card:hover { border-top-color:var(--gold); border-color:var(--border-lt); }
+    .callsign { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:.15rem; }
+    .team-card h4 { font-family:'Oswald',sans-serif; font-weight:600; font-size:.92rem; text-transform:uppercase; color:#e0e0e0; margin-bottom:.1rem; letter-spacing:.04em; }
+    .tc-title { font-size:.68rem; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.6rem; padding-bottom:.6rem; border-bottom:1px solid var(--border); }
+    .tc-bio { font-size:.76rem; color:var(--muted); line-height:1.7; }
+
+    /* CLIENTS */
+    .agencies { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:2.2rem; }
+    .ap { background:var(--dark4); border:1px solid var(--border); font-family:'Oswald',sans-serif; font-weight:600; font-size:.88rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); padding:.55rem 1.3rem; transition:all .25s; }
+    .ap:hover { border-color:var(--gold); color:var(--gold); background:rgba(201,162,39,.06); }
+
+    /* PROGRAMS LIST */
+    .plist { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+    .pi { display:flex; align-items:center; gap:1rem; background:var(--dark3); border:1px solid var(--border); padding:1rem 1.2rem; transition:border-color .25s; }
+    .pi:hover { border-color:var(--gold); }
+    .pi .pnum { font-family:'Oswald',sans-serif; font-weight:700; font-size:1.4rem; color:var(--gold); opacity:.45; min-width:2rem; }
+    .pi span { font-size:.85rem; color:#ccc; }
+
+    /* LOCATION */
+    .loc-detail { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.4rem; }
+    .loc-icon { flex:0 0 38px; height:38px; background:var(--dark4); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+    .loc-detail strong { display:block; font-family:'Oswald',sans-serif; font-size:.88rem; text-transform:uppercase; color:var(--gold); margin-bottom:.12rem; }
+    .loc-detail span { font-size:.82rem; color:var(--muted); }
+
+    /* CTA */
+    .cta-banner { background:linear-gradient(rgba(6,6,6,.92),rgba(6,6,6,.92)),url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1920&q=80') center/cover fixed; padding:70px 0; text-align:center; }
+    .cta-banner h2 { font-family:'Oswald',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.5vw,2.4rem); text-transform:uppercase; color:#fff; margin-bottom:.8rem; letter-spacing:.04em; }
+    .cta-banner h2 span { color:var(--gold); }
+    .cta-banner p { color:var(--muted); max-width:560px; margin:0 auto 2.5rem; font-size:.95rem; }
+    .cta-row { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; }
+
+    /* CONTACT */
+    .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:3rem; align-items:start; }
+    .cf { background:var(--dark3); border:1px solid var(--border); padding:2.5rem; }
+    .cf h3 { font-family:'Oswald',sans-serif; font-weight:600; font-size:1.25rem; text-transform:uppercase; color:#fff; margin-bottom:1.4rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+    .frow { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .fg { margin-bottom:1rem; }
+    .fg label { display:block; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:.35rem; }
+    .fg input, .fg select, .fg textarea { width:100%; background:var(--dark4); border:1px solid var(--border); color:var(--text); font-family:'Open Sans',sans-serif; font-size:.86rem; padding:.72rem 1rem; outline:none; transition:border-color .2s; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:var(--gold); }
+    .fg select option { background:var(--dark4); }
+    .fg textarea { min-height:100px; resize:vertical; }
+
+    /* FOOTER */
+    footer { background:#050505; border-top:1px solid var(--border); padding:3rem 0 1.5rem; }
+    .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:2.5rem; margin-bottom:3rem; }
+    .fb p { font-size:.8rem; color:var(--muted); line-height:1.75; max-width:270px; margin-top:1rem; }
+    .fb-motto { margin-top:1rem; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); }
+    .fc h5 { font-family:'Oswald',sans-serif; font-weight:600; font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; color:#fff; margin-bottom:.9rem; padding-bottom:.5rem; border-bottom:1px solid var(--border); }
+    .fc ul { list-style:none; display:flex; flex-direction:column; gap:.45rem; }
+    .fc ul li a { font-size:.8rem; color:var(--muted); transition:color .2s; }
+    .fc ul li a:hover { color:var(--gold); }
+    .footer-bot { border-top:1px solid var(--border); padding-top:1.4rem; display:flex; justify-content:space-between; align-items:center; font-size:.73rem; color:var(--muted); }
+    .footer-bot a { color:var(--gold); }
+    .blue-bar { height:4px; background:linear-gradient(to right,var(--dark),var(--blue-lt),var(--dark)); }
+
+    .fade-up { opacity:0; transform:translateY(28px); transition:opacity .6s ease,transform .6s ease; }
+    .fade-up.visible { opacity:1; transform:translateY(0); }
+
+    @media(max-width:1024px) {
+      .two-col,.ga-grid,.contact-grid,.tac-split { grid-template-columns:1fr; }
+      .hero-stats,.ga-stack { display:none; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+      .prog-grid { grid-template-columns:1fr 1fr; }
+      .team-grid { grid-template-columns:1fr 1fr; }
+      .feat-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:768px) {
+      .section { padding:60px 0; }
+      .prog-grid,.feat-grid,.plist,.team-grid { grid-template-columns:1fr; }
+      .fac-photos { grid-template-columns:1fr 1fr; }
+      .fp.large { grid-column:span 2; }
+      .footer-grid { grid-template-columns:1fr; }
+      .frow { grid-template-columns:1fr; }
+      .nav-links { display:none; }
+      .tac-content { padding:2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" style="height:50px;width:50px;flex-shrink:0">
+      <circle cx="250" cy="260" r="235" fill="white"/>
+      <path d="M250,215 C225,207 185,193 155,180 C125,167 92,150 63,130 C53,122 50,115 56,111 C64,107 90,121 148,147 C192,160 228,164 250,215Z" fill="#b0b0b0"/>
+      <path d="M250,215 C275,207 315,193 345,180 C375,167 408,150 437,130 C447,122 450,115 444,111 C436,107 410,121 352,147 C308,160 272,164 250,215Z" fill="#b0b0b0"/>
+      <path d="M250,215 C235,207 210,197 188,185 C170,176 153,164 138,153 C124,142 115,133 113,127 C117,122 130,129 143,137 C158,147 174,157 193,165 C213,174 232,181 250,215Z" fill="#c8c8c8"/>
+      <path d="M250,215 C265,207 290,197 312,185 C330,176 347,164 362,153 C376,142 385,133 387,127 C383,122 370,129 357,137 C342,147 326,157 307,165 C287,174 268,181 250,215Z" fill="#c8c8c8"/>
+      <ellipse cx="250" cy="193" rx="36" ry="40" fill="white" stroke="#ddd" stroke-width="0.5"/>
+      <circle cx="263" cy="187" r="5.5" fill="#111"/>
+      <circle cx="264.5" cy="185.5" r="1.5" fill="white"/>
+      <path d="M246,178 C252,174 262,174 269,178" fill="none" stroke="#333" stroke-width="1.5"/>
+      <path d="M275,194 C284,194 291,198 289,204 C287,208 279,210 271,207 C267,211 263,215 257,216 C253,211 257,205 263,201 C266,197 271,195 275,194Z" fill="#e8a800" stroke="#c08000" stroke-width="0.4"/>
+      <path d="M270,207 C272,211 268,215 262,216 C260,211 263,207 267,206Z" fill="#c08000"/>
+      <ellipse cx="250" cy="248" rx="38" ry="46" fill="#e8e8e8" stroke="#bbb" stroke-width="0.5"/>
+      <path d="M224,232 C234,229 244,227 250,227 C256,227 266,229 276,232 C269,238 261,242 250,244 C239,242 231,238 224,232Z" fill="#d0d0d0"/>
+      <path d="M220,245 C232,242 242,240 250,240 C258,240 268,242 280,245 C272,252 262,257 250,259 C238,257 228,252 220,245Z" fill="#c8c8c8"/>
+      <path d="M221,278 C214,282 207,287 204,294 C208,297 215,294 221,289Z" fill="#e8a800"/>
+      <path d="M217,284 C209,290 203,297 201,305 C205,308 212,305 217,298Z" fill="#e8a800"/>
+      <path d="M224,288 C217,294 213,302 212,310 C217,313 224,308 226,301Z" fill="#e8a800"/>
+      <path d="M232,290 C226,297 222,306 222,314 C227,317 234,312 235,304Z" fill="#e8a800" stroke="#c08000" stroke-width="0.3"/>
+      <path d="M279,278 C286,282 293,287 296,294 C292,297 285,294 279,289Z" fill="#e8a800"/>
+      <path d="M283,284 C291,290 297,297 299,305 C295,308 288,305 283,298Z" fill="#e8a800"/>
+      <path d="M276,288 C283,294 287,302 288,310 C283,313 276,308 274,301Z" fill="#e8a800"/>
+      <path d="M268,290 C274,297 278,306 278,314 C273,317 266,312 265,304Z" fill="#e8a800" stroke="#c08000" stroke-width="0.3"/>
+      <rect x="245" y="157" width="10" height="52" rx="2.5" fill="#1a1a1a" stroke="#333" stroke-width="0.4"/>
+      <rect x="245" y="162" width="10" height="3.5" rx="1" fill="#303030"/>
+      <rect x="245" y="169" width="10" height="3.5" rx="1" fill="#303030"/>
+      <rect x="245" y="176" width="10" height="3.5" rx="1" fill="#303030"/>
+      <rect x="245" y="183" width="10" height="3.5" rx="1" fill="#303030"/>
+      <rect x="245" y="190" width="10" height="3.5" rx="1" fill="#303030"/>
+      <rect x="238" y="208" width="24" height="6" rx="2" fill="#2a2a2a" stroke="#444" stroke-width="0.4"/>
+      <path d="M245,214 L255,214 L256,315 L250,342 L244,315Z" fill="#c0c8d0" stroke="#888" stroke-width="0.4"/>
+      <line x1="250" y1="218" x2="250" y2="328" stroke="#d0d8e0" stroke-width="1" opacity="0.5"/>
+      <circle cx="250" cy="154" r="7.5" fill="#111" stroke="#555" stroke-width="0.8"/>
+      <circle cx="250" cy="154" r="4.5" fill="#1a1a1a"/>
+      <line x1="250" y1="148" x2="250" y2="160" stroke="#777" stroke-width="0.8"/>
+      <line x1="244" y1="154" x2="256" y2="154" stroke="#777" stroke-width="0.8"/>
+      <circle cx="250" cy="154" r="2" fill="none" stroke="#888" stroke-width="0.6"/>
+      <g transform="rotate(-14,310,285)">
+        <rect x="218" y="275" width="138" height="7" rx="2" fill="#3a3a3a" stroke="#222" stroke-width="0.3"/>
+        <rect x="366" y="273" width="14" height="11" rx="1" fill="#222"/>
+        <rect x="276" y="274" width="58" height="8" rx="1" fill="#2e2e2e"/>
+        <rect x="218" y="274" width="54" height="13" rx="2" fill="#353535" stroke="#222" stroke-width="0.3"/>
+        <rect x="218" y="286" width="54" height="16" rx="2" fill="#2e2e2e" stroke="#1a1a1a" stroke-width="0.3"/>
+        <path d="M246,302 Q256,311 266,302" fill="none" stroke="#333" stroke-width="2.5"/>
+        <path d="M246,300 L238,328 L249,334 L260,308 L254,300Z" fill="#252525" stroke="#1a1a1a" stroke-width="0.3"/>
+        <rect x="170" y="277" width="50" height="9" rx="3.5" fill="#2e2e2e" stroke="#222" stroke-width="0.3"/>
+        <path d="M170,277 L150,275 L144,287 L170,286Z" fill="#282828"/>
+        <path d="M258,298 L266,298 L270,338 L254,338Z" fill="#2a2a2a"/>
+      </g>
+      <path d="M235,256 L258,256 L248,286 L265,286 L237,332 L248,299 L232,299Z" fill="white" stroke="#1a4a8a" stroke-width="1.8"/>
+      <line x1="237" y1="271" x2="261" y2="271" stroke="#1d4e89" stroke-width="2.2"/>
+      <text x="250" y="280" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5" fill="#1a4a8a" text-anchor="middle" transform="rotate(-13,250,280)">ISOK</text>
+      <polygon points="137,147 140,157 150,157 142,163 145,173 137,167 129,173 132,163 125,157 134,157" fill="#111"/>
+      <polygon points="363,147 366,157 376,157 368,163 371,173 363,167 355,173 358,163 351,157 360,157" fill="#111"/>
+      <path id="na1" d="M27,260 A226,226 0 0,1 473,260" fill="none"/>
+      <text font-family="Arial,sans-serif" font-size="13.5" fill="#111" font-weight="600"><textPath href="#na1" startOffset="4.5%" letter-spacing="1.5">International Special Operations Law Enforcement</textPath></text>
+      <path id="na2" d="M118,185 A146,146 0 0,1 382,185" fill="none"/>
+      <text font-family="Impact,Arial Black,sans-serif" font-size="19" fill="#111" font-weight="900"><textPath href="#na2" startOffset="9%">THOSE WHO DARE</textPath></text>
+      <path id="na3" d="M98,312 A163,163 0 0,0 402,312" fill="none"/>
+      <text font-family="Impact,Arial Black,sans-serif" font-size="17" fill="#111" font-weight="900"><textPath href="#na3" startOffset="5%">RESPECT ALL ★ FEAR NONE</textPath></text>
+      <text x="250" y="490" font-family="Georgia,serif" font-size="15" fill="#111" text-anchor="middle" font-style="italic">Training &amp; K-9 Academy</text>
+      <circle cx="250" cy="260" r="233" fill="none" stroke="#333" stroke-width="1.5"/>
+      <circle cx="250" cy="260" r="226" fill="none" stroke="#999" stroke-width="0.4" stroke-dasharray="3,5"/>
+    </svg>
+    <div>
+      <span class="nl-abbr">ISOK</span>
+      <span class="nl-full">International Special Operations<br/>K-9 Training Academy</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#facility">Facility</a></li>
+    <li><a href="#k9training">K-9 Training</a></li>
+    <li><a href="#tactical">Tactical</a></li>
+    <li><a href="#gladiator">Gladiator Allegiance</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hl"></span>
+        <span>Legacy Ranch · Edgewood, New Mexico</span>
+      </div>
+      <div class="hero-logo-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" width="150">
+          <circle cx="250" cy="260" r="235" fill="white"/>
+          <path d="M250,215 C225,207 185,193 155,180 C125,167 92,150 63,130 C53,122 50,115 56,111 C64,107 90,121 148,147 C192,160 228,164 250,215Z" fill="#b0b0b0"/>
+          <path d="M250,215 C275,207 315,193 345,180 C375,167 408,150 437,130 C447,122 450,115 444,111 C436,107 410,121 352,147 C308,160 272,164 250,215Z" fill="#b0b0b0"/>
+          <path d="M250,215 C235,207 210,197 188,185 C170,176 153,164 138,153 C124,142 115,133 113,127 C117,122 143,137 193,165 C213,174 232,181 250,215Z" fill="#c8c8c8"/>
+          <path d="M250,215 C265,207 290,197 312,185 C330,176 362,153 387,127 C383,122 357,137 307,165 C287,174 268,181 250,215Z" fill="#c8c8c8"/>
+          <ellipse cx="250" cy="193" rx="36" ry="40" fill="white"/>
+          <circle cx="263" cy="187" r="5.5" fill="#111"/>
+          <path d="M275,194 C284,194 291,198 289,204 C287,208 271,207 263,215 C253,211 257,205 263,201 C266,197 271,195 275,194Z" fill="#e8a800"/>
+          <ellipse cx="250" cy="248" rx="38" ry="46" fill="#e8e8e8"/>
+          <path d="M221,278 C214,282 204,294 208,297 C215,294 221,289 221,278Z" fill="#e8a800"/>
+          <path d="M217,284 C209,290 201,305 205,308 C212,305 217,298 217,284Z" fill="#e8a800"/>
+          <path d="M232,290 C226,297 222,314 227,317 C234,312 235,304 232,290Z" fill="#e8a800"/>
+          <path d="M279,278 C286,282 296,294 292,297 C285,294 279,289 279,278Z" fill="#e8a800"/>
+          <path d="M283,284 C291,290 299,305 295,308 C288,305 283,298 283,284Z" fill="#e8a800"/>
+          <path d="M268,290 C274,297 278,314 273,317 C266,312 265,304 268,290Z" fill="#e8a800"/>
+          <rect x="245" y="157" width="10" height="52" rx="2.5" fill="#1a1a1a"/>
+          <rect x="238" y="208" width="24" height="6" rx="2" fill="#2a2a2a"/>
+          <path d="M245,214 L255,214 L256,315 L250,342 L244,315Z" fill="#c0c8d0"/>
+          <line x1="250" y1="218" x2="250" y2="328" stroke="#d0d8e0" stroke-width="1" opacity="0.5"/>
+          <circle cx="250" cy="154" r="7.5" fill="#111"/>
+          <line x1="250" y1="148" x2="250" y2="160" stroke="#777" stroke-width="0.8"/>
+          <line x1="244" y1="154" x2="256" y2="154" stroke="#777" stroke-width="0.8"/>
+          <g transform="rotate(-14,310,285)">
+            <rect x="218" y="275" width="138" height="7" rx="2" fill="#3a3a3a"/>
+            <rect x="366" y="273" width="14" height="11" rx="1" fill="#222"/>
+            <rect x="218" y="274" width="54" height="13" rx="2" fill="#353535"/>
+            <rect x="218" y="286" width="54" height="16" rx="2" fill="#2e2e2e"/>
+            <path d="M246,300 L238,328 L249,334 L260,308 L254,300Z" fill="#252525"/>
+            <rect x="170" y="277" width="50" height="9" rx="3.5" fill="#2e2e2e"/>
+            <path d="M170,277 L150,275 L144,287 L170,286Z" fill="#282828"/>
+            <path d="M258,298 L266,298 L270,338 L254,338Z" fill="#2a2a2a"/>
+          </g>
+          <path d="M235,256 L258,256 L248,286 L265,286 L237,332 L248,299 L232,299Z" fill="white" stroke="#1a4a8a" stroke-width="1.8"/>
+          <line x1="237" y1="271" x2="261" y2="271" stroke="#1d4e89" stroke-width="2.2"/>
+          <text x="250" y="280" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5" fill="#1a4a8a" text-anchor="middle" transform="rotate(-13,250,280)">ISOK</text>
+          <polygon points="137,147 140,157 150,157 142,163 145,173 137,167 129,173 132,163 125,157 134,157" fill="#111"/>
+          <polygon points="363,147 366,157 376,157 368,163 371,173 363,167 355,173 358,163 351,157 360,157" fill="#111"/>
+          <path id="ha1" d="M27,260 A226,226 0 0,1 473,260" fill="none"/>
+          <text font-family="Arial,sans-serif" font-size="13.5" fill="#111" font-weight="600"><textPath href="#ha1" startOffset="4.5%" letter-spacing="1.5">International Special Operations Law Enforcement</textPath></text>
+          <path id="ha2" d="M118,185 A146,146 0 0,1 382,185" fill="none"/>
+          <text font-family="Impact,Arial Black,sans-serif" font-size="19" fill="#111"><textPath href="#ha2" startOffset="9%">THOSE WHO DARE</textPath></text>
+          <path id="ha3" d="M98,312 A163,163 0 0,0 402,312" fill="none"/>
+          <text font-family="Impact,Arial Black,sans-serif" font-size="17" fill="#111"><textPath href="#ha3" startOffset="5%">RESPECT ALL ★ FEAR NONE</textPath></text>
+          <text x="250" y="490" font-family="Georgia,serif" font-size="15" fill="#111" text-anchor="middle" font-style="italic">Training &amp; K-9 Academy</text>
+          <circle cx="250" cy="260" r="233" fill="none" stroke="#333" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <h1>International<br/>Special Operations<br/><em>K-9 Academy</em></h1>
+      <div class="hero-motto">
+        <span>Those Who Dare</span><span class="dot"></span>
+        <span>Respect All</span><span class="dot"></span>
+        <span>Fear None</span>
+      </div>
+      <p>America's premier K-9 and tactical training institution — 488 acres at Legacy Ranch, Edgewood, New Mexico. Serving military, law enforcement, and elite security organizations worldwide. Veterans driving every operation.</p>
+      <div class="hero-actions">
+        <a href="#video" class="btn btn-gold">Watch the Facility</a>
+        <a href="#contact" class="btn btn-outline">Request Training Info</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hs"><div class="num">488</div><div class="lbl">Training Acres</div></div>
+    <div class="hs"><div class="num">1,000</div><div class="lbl">Yard Rifle Range</div></div>
+    <div class="hs"><div class="num">148</div><div class="lbl">Kennels</div></div>
+    <div class="hs"><div class="num">40</div><div class="lbl">Min from ABQ Airport</div></div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="strip-inner">
+      <div class="si"><span class="si-icon">🌄</span><div><strong>488 Acres</strong><span>Training Land</span></div></div>
+      <div class="si"><span class="si-icon">🎯</span><div><strong>1,000 Yd</strong><span>Rifle Range</span></div></div>
+      <div class="si"><span class="si-icon">🐾</span><div><strong>148</strong><span>Kennel Capacity</span></div></div>
+      <div class="si"><span class="si-icon">🚁</span><div><strong>Air Assault LZ</strong><span>Helicopter Training</span></div></div>
+      <div class="si"><span class="si-icon">🏍️</span><div><strong>6-Mile ATV</strong><span>Day &amp; Night Course</span></div></div>
+      <div class="si"><span class="si-icon">✈️</span><div><strong>40 Min</strong><span>From ABQ Airport</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<section class="video-section" id="video">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:3rem">
+      <div class="tag">See The Facility</div>
+      <h2 class="section-title">Experience <span>Legacy Ranch</span></h2>
+      <span class="gold-line" style="margin:1.5rem auto 0"></span>
+    </div>
+    <div class="video-wrap fade-up">
+      <video controls playsinline poster="video_poster.jpg">
+        <source src="facility_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-label">Legacy Ranch — 74 Barton Rd, Edgewood, NM · ISOK Training Facility</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" style="background:var(--dark2)" id="about">
+  <div class="container">
+    <div class="two-col">
+      <div class="img-frame fade-up">
+        <div class="img-corner"></div>
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80" alt="K-9 Training" />
+        <div class="img-badge"><div class="big">20+</div><div class="sm">Years K-9<br/>Leadership</div></div>
+      </div>
+      <div class="fade-up">
+        <div class="tag">About ISOK</div>
+        <h2 class="section-title">Premier Tactical <span>Training Institution</span></h2>
+        <span class="gold-line"></span>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1rem">ISOK is a premier tactical training institution dedicated to forging the highest standard of excellence in tactical readiness, security, and operational effectiveness. Our Academy serves as a global leader in delivering advanced training for military, law enforcement, and security professionals.</p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1rem">By combining cutting-edge tactics, real-world experience, and specialized instruction, we prepare personnel to operate with precision and confidence in today's most challenging worldwide environments. We are proud to employ veterans as the driving force behind our training operations and overseas service.</p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem">At ISOK, we do more than train — we build resilience, sharpen decision-making, and cultivate leaders capable of excelling in complex, high-stakes situations. With an international reach and an unwavering commitment to excellence, ISOK stands as a trusted partner for agencies and organizations worldwide.</p>
+        <div class="pillars">
+          <div class="pillar"><h4>Integrity</h4><p>Acting ethically and transparently in all dealings, with full accountability.</p></div>
+          <div class="pillar"><h4>Resilience</h4><p>Building leaders capable of excelling in complex, high-stakes environments.</p></div>
+          <div class="pillar"><h4>Excellence</h4><p>Every course reflects the precision and adaptability required in the field.</p></div>
+          <div class="pillar"><h4>Veterans First</h4><p>Veterans drive every training operation and overseas security service.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITY -->
+<section class="section section-dark" id="facility">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:3rem">
+      <div class="tag">The Facility — Legacy Ranch</div>
+      <h2 class="section-title">488 Acres of <span>World-Class</span> Infrastructure</h2>
+      <span class="gold-line"></span>
+      <p class="section-sub">74 Barton Rd, Edgewood, NM 87015 — 40 minutes from Albuquerque International Airport and just 30 minutes from the I-25/I-40 interchange. Paved roads to the gate, accessible year-round, with cell and internet access on-site.</p>
+    </div>
+    <div class="fac-photos fade-up">
+      <div class="fp large"><img src="https://images.unsplash.com/photo-1548407260-da850faa41e3?auto=format&fit=crop&w=1200&q=80" alt="Legacy Ranch" /><div class="fp-lbl">Legacy Ranch — Edgewood, New Mexico</div></div>
+      <div class="fp"><img src="https://images.unsplash.com/photo-1501179691627-eeaa65ea017c?auto=format&fit=crop&w=600&q=80" alt="Training Terrain" /><div class="fp-lbl">488 Acres of Training Land</div></div>
+      <div class="fp"><img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=600&q=80" alt="Ranch Grounds" /><div class="fp-lbl">Ranch Grounds</div></div>
+      <div class="fp"><img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?auto=format&fit=crop&w=600&q=80" alt="Shooting Range" /><div class="fp-lbl">Tactical Shooting Berms</div></div>
+      <div class="fp large"><img src="https://images.unsplash.com/photo-1604601942703-27d50c6d4b4a?auto=format&fit=crop&w=1200&q=80" alt="Training Compound" /><div class="fp-lbl">Training Compound & Infrastructure</div></div>
+    </div>
+    <div class="feat-grid fade-up">
+      <div class="feat-card"><div class="ficon">🐾</div><h3>K-9 Infrastructure</h3><ul><li>148 individual kennels on-site</li><li>Canine performance & conditioning suites</li><li>Grooming & bathing center / welfare center</li><li>Mock checkpoints, open areas, warehouses</li><li>Scenario compounds — sound, smoke, explosions</li><li>Training classrooms on-site</li><li>ATF-licensed live explosive compound storage</li></ul></div>
+      <div class="feat-card"><div class="ficon">🎯</div><h3>Firearms Ranges</h3><ul><li>9 tactical shooting berms</li><li>1,000-yard precision rifle range</li><li>300-yard assault range</li><li>2 × 50-yard pistol ranges</li><li>Rated for all calibers up to 7.62mm</li><li>Compacted gravel, all-weather surface</li><li>Covered loading & equipment tables</li></ul></div>
+      <div class="feat-card"><div class="ficon">🚁</div><h3>Air Assault / Helicopter LZ</h3><ul><li>Military Training Landing Zone (LZ)</li><li>100′ × 100′+ cleared, obstacle-free area</li><li>Rated for all rotary-wing aircraft</li><li>Marked boundaries for approach/departure</li><li>Single and multi-aircraft configurations</li><li>Insertion, extraction & resupply training</li><li>Air-ground coordination exercises</li></ul></div>
+      <div class="feat-card"><div class="ficon">🏕️</div><h3>Grounds & Amenities</h3><ul><li>6-mile ATV day and night training course</li><li>Event center & 3 private classrooms</li><li>On-site meal service</li><li>7-foot perimeter fencing — access controlled</li><li>12,000-gallon water storage & well</li><li>Barn with workshop & bathroom facilities</li><li>All-call medics & trauma kits on-site</li></ul></div>
+      <div class="feat-card"><div class="ficon">🏠</div><h3>Close Quarters Battle</h3><ul><li>Both lethal and non-lethal facilities</li><li>Realistic furnishings & culturally accurate props</li><li>House-clearing structure configurations</li><li>Hostage rescue exercise setups</li><li>Embassy takeover scenario</li><li>Prepares personnel for global deployment</li></ul></div>
+      <div class="feat-card"><div class="ficon">🥋</div><h3>Combatives & Security</h3><ul><li>Zebra Athletics padded floor</li><li>7-foot AGM padded walls</li><li>Four-camera DVR — live & playback</li><li>30-student classroom with HD monitors</li><li>Smoke, strobe, loud-noise scenario gear</li><li>Two on-site armories + Intrusion Detection</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- K9 TRAINING -->
+<section class="section" style="background:var(--dark2)" id="k9training">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:3rem">
+      <div class="tag">K-9 Training Programs</div>
+      <h2 class="section-title">Elite Canine <span>Training & Certification</span></h2>
+      <span class="gold-line"></span>
+      <p class="section-sub">One of the largest commercial canine facilities in the United States — staffed by seasoned instructors, trainers, and kennel technicians. Purpose-bred dogs trained from birth for the highest-demand security missions.</p>
+    </div>
+    <div class="prog-grid fade-up">
+      <div class="prog-card"><img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=600&q=80" alt="Vapor Wake"/><div class="prog-card-body"><div class="ptag">Detection</div><h3>Vapor Wake / Kinetic Detection</h3><p>Trained to detect explosives and firearms on individuals in high-traffic areas. Teams screen hundreds simultaneously, trailing scent plumes even after a carrier has departed.</p></div></div>
+      <div class="prog-card"><img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=600&q=80" alt="Executive Protection"/><div class="prog-card-body"><div class="ptag">Protection</div><h3>Executive Protection K-9</h3><p>Body-worn K-9 teams for stateside and international executive protection. Trained in deterrence, threat assessment, and rapid response for high-value clients.</p></div></div>
+      <div class="prog-card"><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80" alt="K9 Patrol"/><div class="prog-card-body"><div class="ptag">Patrol</div><h3>K-9 Patrol Services</h3><p>Expert canine teams conducting regular patrols to deter criminal activity and ensure secure environments for law enforcement, government facilities, and commercial operations.</p></div></div>
+      <div class="prog-card"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=600&q=80" alt="Narcotics"/><div class="prog-card-body"><div class="ptag">Narcotics</div><h3>Narcotics & Contraband Detection</h3><p>Specialized K-9 units for borders, cargo centers, schools, and airports. Integrated with cyber intelligence for detecting trafficking-related TPPO-coated electronic devices.</p></div></div>
+      <div class="prog-card"><img src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&w=600&q=80" alt="EOD"/><div class="prog-card-body"><div class="ptag">EOD</div><h3>Explosive Detection</h3><p>ATF-licensed facility for live explosive compound training. Canines certified for airports, transit, stadiums, and government venues — trained from birth to work in large crowds.</p></div></div>
+      <div class="prog-card"><img src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=600&q=80" alt="Specialty"/><div class="prog-card-body"><div class="ptag">Specialty</div><h3>Bedbug & Specialty Detection</h3><p>Bedbug detection for residential, commercial, and government properties. Sex trafficking interdiction using canine detection of TPPO-coated electronics and contraband.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TACTICAL -->
+<section id="tactical" style="background:var(--dark)">
+  <div class="tac-split">
+    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80" alt="Tactical Training" class="tac-img"/>
+    <div class="tac-content">
+      <div class="tag">Tactical Training</div>
+      <h2 class="section-title" style="margin-bottom:1rem">Elite <span>Operator</span><br/>Training Programs</h2>
+      <span class="gold-line"></span>
+      <div class="tac-mod"><div class="tac-icon">⭐</div><div><h4>Special Forces Assessment & Selection</h4><p>Rigorous 24-day SFAS course covering land navigation, physical fitness, obstacle courses, road marches, language aptitude testing, Military Free Fall, and Combat Diver qualification.</p></div></div>
+      <div class="tac-mod"><div class="tac-icon">🏠</div><div><h4>Close Quarters Combat (CQC)</h4><p>Both lethal and non-lethal shooting facilities with realistic props, hostage rescue, embassy takeover, and house-clearing drills — preparing personnel for every conceivable deployment scenario.</p></div></div>
+      <div class="tac-mod"><div class="tac-icon">🚁</div><div><h4>Air Assault & Helicopter Operations</h4><p>Dedicated Military Training LZ for rapid insertion, extraction, and resupply missions. Single and multi-aircraft operations with emphasis on air-ground coordination and mission readiness.</p></div></div>
+      <div class="tac-mod"><div class="tac-icon">🎯</div><div><h4>Advanced Marksmanship — 1,000 Yd</h4><p>From fundamentals through advanced: moving/shooting drills, malfunction drills, low-light scenarios, stress shooting, and full combat gear qualifications out to 1,000 yards on 9 berms.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS LIST -->
+<section class="section" style="background:var(--dark2)">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:3rem">
+      <div class="tag">ISOK Curriculum</div>
+      <h2 class="section-title">Certified <span>Training Programs</span></h2>
+      <span class="gold-line" style="margin:1.5rem auto 0"></span>
+    </div>
+    <div class="plist fade-up">
+      <div class="pi"><span class="pnum">01</span><span>SWAT / Tactical Operators Course</span></div>
+      <div class="pi"><span class="pnum">02</span><span>Law Enforcement Precision Rifle / Sniper Course</span></div>
+      <div class="pi"><span class="pnum">03</span><span>Law Enforcement Firearms Instructor Course</span></div>
+      <div class="pi"><span class="pnum">04</span><span>B.E.C.O.N. Active Shooter Response Training</span></div>
+      <div class="pi"><span class="pnum">05</span><span>goTenna &amp; TAK (Team Awareness Kit) Courses</span></div>
+      <div class="pi"><span class="pnum">06</span><span>Air Assault / Helicopter Insertion &amp; Extraction</span></div>
+      <div class="pi"><span class="pnum">07</span><span>ATV Day &amp; Night Land Navigation — 6-Mile Course</span></div>
+      <div class="pi"><span class="pnum">08</span><span>Vapor Wake Canine Certification &amp; Handler Training</span></div>
+      <div class="pi"><span class="pnum">09</span><span>Executive Protection K-9 Deployment Course</span></div>
+      <div class="pi"><span class="pnum">10</span><span>Explosive, Narcotics &amp; Contraband Detection Certification</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GLADIATOR ALLEGIANCE -->
+<section class="section ga-section" id="gladiator">
+  <div class="container">
+    <div class="ga-grid">
+      <div class="ga-stack fade-up">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=80" alt="Gladiator Allegiance K-9"/>
+        <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?auto=format&fit=crop&w=600&q=80" alt="K-9 Detection"/>
+      </div>
+      <div class="fade-up">
+        <div class="tag" style="border-color:#2563b0;color:#7ab3e8">Primary Partner</div>
+        <h2 class="section-title">The Force <span>Behind</span> the Facility</h2>
+        <span class="gold-line"></span>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1.2rem">Gladiator Allegiance LLC and IAG Protection Group are premier K-9 security companies led by Miriah "Brass" Allamong — a combat-proven handler and trainer with 20+ years in foreign conflicts alongside state, federal, and special operations teams. ISOK at Legacy Ranch serves as the primary training ground powering their world-class operations.</p>
+        <p style="color:var(--muted);line-height:1.85">Gladiator Allegiance deploys Vapor Wake Detection K-9 teams that screen hundreds at stadiums, airports, and major events — detecting mobile bombers invisible to traditional screening. Together with The Sapphire Group, they also provide diplomatic protection for U.S. embassies and dignitaries worldwide. Every team trains at ISOK.</p>
+        <ul class="ga-list">
+          <li>One of only three companies licensed to use Auburn University's patented Vapor Wake technology</li>
+          <li>Training grounds for three-letter government agencies — CIA, NSA, DEA, DHS, TSA, and more</li>
+          <li>Stateside and international executive protection with Tier 1 operators</li>
+          <li>Diplomatic protection for U.S. embassies, foreign ministers, royalty, and NATO dignitaries</li>
+          <li>Partnered with War Dog Guardians 501(c)(3) — puppy-to-grave commitment for every K-9</li>
+          <li>Native American · Female · Disabled Veteran · 8(a) certified — leveraging GSA set-asides</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section section-dark" id="team">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:3rem">
+      <div class="tag">Leadership</div>
+      <h2 class="section-title">The <span>Team</span> Behind ISOK</h2>
+      <span class="gold-line"></span>
+    </div>
+    <div class="team-grid fade-up">
+      <div class="team-card"><div class="callsign">"Brass"</div><h4>Miriah Allamong</h4><div class="tc-title">President & CEO</div><p class="tc-bio">Widely recognized leader in K-9 security with 20+ years as certified handler/trainer in foreign conflicts. Combat veteran of Afghanistan and Iraq. Collaborated with state, federal, and special operations teams in the global war on terror.</p></div>
+      <div class="team-card"><div class="callsign">"Brick"</div><h4>Ed Baldwin</h4><div class="tc-title">Government Intelligence & Operations</div><p class="tc-bio">Marine Corps combat veteran and former U.S. Government PMC — 35 years of service. Multiple deployments in Iraq, Afghanistan, Syria, and Panama. Deep reconnaissance, Direct Action Operations, dignitary protection.</p></div>
+      <div class="team-card"><div class="callsign"></div><h4>Pete Genovese</h4><div class="tc-title">Director of National K-9 Operations / Head Trainer</div><p class="tc-bio">President of the UPWDA. Specialized in special crimes street division and SWAT. Maryland Police Corrections Training Commission Instructor, Detective, and K9 Handler with national accreditations.</p></div>
+      <div class="team-card"><div class="callsign"></div><h4>William Parker</h4><div class="tc-title">Director, Vapor Wake Canine Operations</div><p class="tc-bio">50 years of K-9 program development. Pioneered Amtrak's Explosive Detection Program. K-9 Commander, Washington Airport Authority. Led U.S. Army's first EOD K-9 team in Operation Desert Shield. Congressional expert witness.</p></div>
+      <div class="team-card"><div class="callsign">"Mexican"</div><h4>Rick De Leon</h4><div class="tc-title">Director of K-9 Global Operations</div><p class="tc-bio">Leads global K-9 deployment strategy, coordinating canine teams across domestic and international security engagements with Gladiator Allegiance and IAG partner organizations worldwide.</p></div>
+      <div class="team-card"><div class="callsign"></div><h4>Dr. Blas Catalani, MD</h4><div class="tc-title">VP, Medical Operations & Logistics</div><p class="tc-bio">Physician anesthesiologist specializing in trauma care, high-risk surgery, and medical logistics. Dedicated to advancing patient care and supporting counterterrorism and organizational development missions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section" style="background:var(--dark2)" id="clients">
+  <div class="container">
+    <div class="fade-up">
+      <div class="tag">Partners & Affiliates</div>
+      <h2 class="section-title">Trusted by <span>Elite Agencies</span></h2>
+      <span class="gold-line"></span>
+      <p class="section-sub">ISOK's clients and affiliates represent the highest echelons of U.S. and international government, law enforcement, and intelligence communities.</p>
+    </div>
+    <div class="agencies fade-up">
+      <div class="ap">CIA</div><div class="ap">NSA</div><div class="ap">DEA</div><div class="ap">DHS</div><div class="ap">TSA</div><div class="ap">NRO</div><div class="ap">DOD</div><div class="ap">DOE</div><div class="ap">IDF</div><div class="ap">ATF</div><div class="ap">U.S. Army</div><div class="ap">SPAWAR</div><div class="ap">NAVSEA</div><div class="ap">NOAA DOC</div><div class="ap">DOI</div><div class="ap">UPWDA</div><div class="ap">State &amp; Local SWAT</div><div class="ap">Tier 1 Operators</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAR DOG GUARDIANS -->
+<section class="section" style="background:linear-gradient(to right,var(--dark) 50%,#0b1a0b 100%);border-top:1px solid #1a3a1a;border-bottom:1px solid #1a3a1a">
+  <div class="container">
+    <div class="two-col fade-up">
+      <div>
+        <div class="tag" style="border-color:#2a6a2a;color:#5cb85c">Partner Organization</div>
+        <h2 class="section-title">War Dog <span>Guardians</span></h2>
+        <span class="gold-line"></span>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1rem">War Dog Guardians 501(c)(3) ensures the well-being of our K-9s from conception to retirement. The <strong style="color:#aaa">War to Home</strong> veteran transitional program furthers this commitment — helping veterans find purpose, stability, and employment through ISOK's facility and expertly trained service dogs.</p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem">The comprehensive adoption program screens and selects suitable homes for retired service dogs, prioritizing lifelong welfare. Retired dogs transition into medical, search & rescue, tracking, and emotional support roles — connecting K-9 veterans with the people who need them most.</p>
+        <a href="https://wardogguardians.org/" target="_blank" class="btn btn-outline" style="border-color:#5cb85c;color:#5cb85c">Visit wardogguardians.org ↗</a>
+      </div>
+      <div><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=700&q=80" alt="War Dog Guardians" style="width:100%;height:380px;object-fit:cover;border:1px solid #2a4a2a"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE / EVENTS -->
+<section class="section" style="background:var(--dark2)">
+  <div class="container">
+    <div class="two-col fade-up">
+      <div>
+        <div class="tag">Corporate & Events</div>
+        <h2 class="section-title">Beyond Training — <span>Corporate Retreats</span></h2>
+        <span class="gold-line"></span>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1rem">ISOK is also a premier venue for corporate gatherings, team-building events, and professional retreats. Set across 488 acres of pristine New Mexico wilderness, our versatile event spaces and outdoor recreation foster collaboration that goes far beyond the traditional boardroom.</p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem">From dynamic sporting clays and archery to private rifle and pistol bays, ISOK provides a safe and exhilarating experience tailored to every skill level. Our on-site meal service, event center, and three private classrooms make every gathering memorable.</p>
+        <a href="#contact" class="btn btn-gold">Inquire About Events</a>
+      </div>
+      <div><img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?auto=format&fit=crop&w=700&q=80" alt="Shooting Range Event" style="width:100%;height:340px;object-fit:cover;border:1px solid var(--border);filter:brightness(.85) saturate(.7)"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section section-dark" id="location">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:3rem">
+      <div class="tag">Location</div>
+      <h2 class="section-title">Find Us at <span>Legacy Ranch</span></h2>
+      <span class="gold-line"></span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start" class="fade-up">
+      <div>
+        <div class="loc-detail"><div class="loc-icon">📍</div><div><strong>Address</strong><span>Legacy Ranch<br/>74 Barton Rd, Edgewood, NM 87015</span></div></div>
+        <div class="loc-detail"><div class="loc-icon">✈️</div><div><strong>Airport Access</strong><span>40 minutes from Albuquerque International Airport<br/>30 min from I-25/I-40 interchange — paved road to gate</span></div></div>
+        <div class="loc-detail"><div class="loc-icon">📞</div><div><strong>Phone</strong><span><a href="tel:2408188987" style="color:var(--gold)">240-818-8987</a></span></div></div>
+        <div class="loc-detail"><div class="loc-icon">✉️</div><div><strong>Email</strong><span><a href="mailto:miriah@isoktraining.com" style="color:var(--gold)">miriah@isoktraining.com</a></span></div></div>
+        <div class="loc-detail"><div class="loc-icon">🌐</div><div><strong>Accessibility</strong><span>Very accessible year-round · Paved access road<br/>Cell phone &amp; internet access throughout facility</span></div></div>
+        <div style="margin-top:1.5rem;padding:1.5rem;background:var(--dark3);border:1px solid var(--border);border-left:3px solid var(--gold)">
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.75">All ISOK personnel hold Top Secret clearance. ATF Licensed · UPWDA Nationally Accredited · 8(a) · Native American-Owned · WOSB · Disabled Veteran-Owned. Authorized for classified training operations at the highest levels of government.</p>
+        </div>
+      </div>
+      <iframe style="width:100%;height:360px;border:1px solid var(--border)" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3226!2d-106.1957!3d35.0628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8720f0e05d8b66cd%3A0x1234!2sEdgewood%2C%20NM%2087015!5e0!3m2!1sen!2sus!4v1620000000000" frameborder="0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="ISOK - Edgewood NM"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container fade-up">
+    <h2>Ready to Train with <span>the Best</span>?</h2>
+    <p>Whether you represent a government agency, law enforcement unit, or elite security organization — ISOK is equipped to meet your requirements. Contact us to schedule a tour or discuss a training partnership.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-gold">Request Training Information</a>
+      <a href="tel:2408188987" class="btn btn-outline">Call 240-818-8987</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="tag">Contact ISOK</div>
+        <h2 class="section-title">Start a <span>Conversation</span></h2>
+        <span class="gold-line"></span>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem">ISOK works with government agencies, law enforcement, and elite security organizations worldwide. Reach out to discuss training programs, facility tours, government contracting, or partnership opportunities.</p>
+        <div class="loc-detail"><div class="loc-icon">📍</div><div><strong>Facility</strong><span>74 Barton Rd, Edgewood, NM 87015</span></div></div>
+        <div class="loc-detail"><div class="loc-icon">📞</div><div><strong>Phone</strong><span><a href="tel:2408188987" style="color:var(--gold)">240-818-8987</a></span></div></div>
+        <div class="loc-detail"><div class="loc-icon">✉️</div><div><strong>Email</strong><span><a href="mailto:miriah@isoktraining.com" style="color:var(--gold)">miriah@isoktraining.com</a></span></div></div>
+        <div class="loc-detail"><div class="loc-icon">🏛️</div><div><strong>Affiliations</strong><span>Gladiator Allegiance LLC · IAG Protection Group<br/>The Sapphire Group · War Dog Guardians 501(c)(3)</span></div></div>
+      </div>
+      <div class="cf fade-up">
+        <h3>Training Inquiry</h3>
+        <div class="frow">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="John"/></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+        </div>
+        <div class="fg"><label>Organization / Agency</label><input type="text" placeholder="Agency or Organization Name"/></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@agency.gov"/></div>
+        <div class="fg"><label>Phone</label><input type="tel" placeholder="+1 (000) 000-0000"/></div>
+        <div class="fg"><label>Area of Interest</label>
+          <select>
+            <option value="">Select a program...</option>
+            <option>K-9 Training &amp; Certification</option>
+            <option>Vapor Wake / Detection Canines</option>
+            <option>Executive Protection K-9</option>
+            <option>Tactical / CQB Training</option>
+            <option>Firearms &amp; Marksmanship</option>
+            <option>SFAS / Operator Training</option>
+            <option>Air Assault / Helicopter LZ</option>
+            <option>ATV / Land Navigation Course</option>
+            <option>Corporate Retreat / Event</option>
+            <option>Government Contract Partnership</option>
+            <option>Facility Tour</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Describe your requirements, agency, or partnership interest..."></textarea></div>
+        <button class="btn btn-gold" id="submitBtn" style="width:100%;margin-top:.5rem">Submit Inquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="blue-bar"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="fb">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" style="height:58px;width:58px">
+          <circle cx="250" cy="260" r="235" fill="white"/>
+          <path d="M250,215 C225,207 185,193 155,180 C125,167 92,150 63,130 C56,111 64,107 148,147 C192,160 228,164 250,215Z" fill="#b8b8b8"/>
+          <path d="M250,215 C275,207 315,193 345,180 C375,167 408,150 437,130 C444,111 436,107 352,147 C308,160 272,164 250,215Z" fill="#b8b8b8"/>
+          <ellipse cx="250" cy="193" rx="34" ry="38" fill="white"/>
+          <circle cx="262" cy="187" r="5" fill="#111"/>
+          <path d="M273,194 C282,194 289,198 287,204 C271,207 263,215 257,215 C253,210 257,204 262,200 C265,197 269,195 273,194Z" fill="#e8a800"/>
+          <ellipse cx="250" cy="246" rx="36" ry="44" fill="#e8e8e8"/>
+          <path d="M220,278 C213,282 203,294 207,297 C214,294 220,289 220,278Z" fill="#e8a800"/>
+          <path d="M231,290 C225,297 221,314 226,317 C233,312 234,304 231,290Z" fill="#e8a800"/>
+          <path d="M280,278 C287,282 297,294 293,297 C286,294 280,289 280,278Z" fill="#e8a800"/>
+          <path d="M269,290 C275,297 279,314 274,317 C267,312 266,304 269,290Z" fill="#e8a800"/>
+          <rect x="246" y="158" width="8" height="50" rx="2" fill="#1a1a1a"/>
+          <rect x="239" y="207" width="22" height="5" rx="1.5" fill="#2a2a2a"/>
+          <path d="M245,212 L255,212 L255,332 L250,355 L245,332Z" fill="#c0c8d0"/>
+          <path id="fa1" d="M27,260 A226,226 0 0,1 473,260" fill="none"/>
+          <text font-family="Arial,sans-serif" font-size="13" fill="#111" font-weight="600"><textPath href="#fa1" startOffset="5%" letter-spacing="1.2">International Special Operations Law Enforcement</textPath></text>
+          <path id="fa2" d="M98,312 A163,163 0 0,0 402,312" fill="none"/>
+          <text font-family="Impact,sans-serif" font-size="16" fill="#111"><textPath href="#fa2" startOffset="5%">RESPECT ALL ★ FEAR NONE</textPath></text>
+          <circle cx="250" cy="260" r="233" fill="none" stroke="#333" stroke-width="1.5"/>
+        </svg>
+        <p>International Special Operations Law Enforcement – Training & K-9 Academy. Premier K-9 and tactical training at Legacy Ranch, Edgewood, NM.</p>
+        <div class="fb-motto">Those Who Dare · Respect All · Fear None</div>
+      </div>
+      <div class="fc"><h5>Training</h5><ul><li><a href="#k9training">K-9 Programs</a></li><li><a href="#k9training">Vapor Wake Detection</a></li><li><a href="#tactical">Tactical / CQB</a></li><li><a href="#tactical">1,000-Yard Rifle Range</a></li><li><a href="#tactical">SFAS Course</a></li><li><a href="#tactical">Air Assault / LZ</a></li></ul></div>
+      <div class="fc"><h5>About</h5><ul><li><a href="#about">About ISOK</a></li><li><a href="#facility">Legacy Ranch Facility</a></li><li><a href="#gladiator">Gladiator Allegiance</a></li><li><a href="#team">Leadership Team</a></li><li><a href="https://wardogguardians.org/" target="_blank">War Dog Guardians</a></li></ul></div>
+      <div class="fc"><h5>Contact</h5><ul><li><a href="tel:2408188987">240-818-8987</a></li><li><a href="mailto:miriah@isoktraining.com">miriah@isoktraining.com</a></li><li><a href="#contact">Training Inquiries</a></li><li><a href="#contact">Government Contracts</a></li><li><a href="#contact">Facility Tours</a></li></ul></div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2025 ISOK – International Special Operations K-9 Training Academy · 74 Barton Rd, Edgewood, NM 87015</span>
+      <span><a href="https://wardogguardians.org/" target="_blank">War Dog Guardians ↗</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    document.querySelectorAll('section[id]').forEach(s => { if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => { a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--gold)' : ''; });
+  });
+
+  document.getElementById('submitBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    this.textContent = 'Inquiry Sent ✓';
+    this.style.background = '#2a6a2a';
+    setTimeout(() => { this.textContent = 'Submit Inquiry'; this.style.background = ''; }, 3000);
+  });
+</script>
+</body>
+</html>
