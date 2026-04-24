@@ -366,7 +366,9 @@
       <h2 class="section-title">Start a <span>Conversation</span></h2>
       <span class="gold-line"></span>
     </div>
-    <div class="contact-grid">
+
+    <!-- Row 1: Contact info + Map -->
+    <div class="contact-grid" style="margin-bottom:2.5rem">
       <div class="reveal-left">
         <div class="loc-row"><div class="loc-icon">📍</div><div><strong>Facility</strong><span>Legacy Ranch · 74 Barton Rd<br/>Edgewood, NM 87015</span></div></div>
         <div class="loc-row"><div class="loc-icon">📞</div><div><strong>Phone</strong><span><a href="tel:2408188987" style="color:var(--gold)">240-818-8987</a></span></div></div>
@@ -374,19 +376,31 @@
         <div class="loc-row"><div class="loc-icon">✈️</div><div><strong>Access</strong><span>40 min from ABQ Airport<br/>Paved road to gate — year-round</span></div></div>
         <div style="margin-top:1.5rem;padding:1.2rem;background:var(--dark3);border:1px solid var(--border);border-left:2px solid var(--gold)"><p style="font-size:.76rem;color:var(--muted);line-height:1.75">All personnel hold Top Secret clearance. ATF Licensed · UPWDA Accredited · 8(a) · Native American-Owned · WOSB · Disabled Veteran-Owned.</p></div>
       </div>
-      <div class="cf reveal-right">
-        <h3>Training Inquiry</h3>
-        <div class="frow">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="John"/></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
-        </div>
-        <div class="fg"><label>Organization / Agency</label><input type="text" placeholder="Agency or Organization"/></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="your@agency.gov"/></div>
-        <div class="fg"><label>Area of Interest</label><select><option>Select a program...</option><option>K-9 Training &amp; Certification</option><option>Vapor Wake / Detection Canines</option><option>Executive Protection K-9</option><option>Tactical / CQB / SFAS</option><option>Firearms &amp; Marksmanship</option><option>Corporate Retreat / Event</option><option>Government Contract Partnership</option><option>Facility Tour</option></select></div>
-        <div class="fg"><label>Message</label><textarea placeholder="Describe your requirements..."></textarea></div>
-        <button class="btn btn-gold" id="submitBtn" style="width:100%;margin-top:.4rem">Submit Inquiry</button>
+      <div class="reveal-right" style="overflow:hidden;border:1px solid var(--border)">
+        <iframe
+          src="https://maps.google.com/maps?q=74+Barton+Rd,+Edgewood,+NM+87015&output=embed"
+          width="100%" height="380" style="border:0;display:block;filter:grayscale(30%) invert(5%)"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
+
+    <!-- Row 2: Training Inquiry form full width -->
+    <div class="cf reveal" style="background:var(--dark3);border:1px solid var(--border);padding:2.5rem;">
+      <h3 style="margin-bottom:1.5rem">Training Inquiry</h3>
+      <div class="frow">
+        <div class="fg"><label>First Name</label><input type="text" placeholder="John"/></div>
+        <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+        <div class="fg"><label>Organization / Agency</label><input type="text" placeholder="Agency or Organization"/></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="your@agency.gov"/></div>
+      </div>
+      <div class="fg"><label>Area of Interest</label><select><option>Select a program...</option><option>K-9 Training &amp; Certification</option><option>Vapor Wake / Detection Canines</option><option>Executive Protection K-9</option><option>Tactical / CQB / SFAS</option><option>Firearms &amp; Marksmanship</option><option>Corporate Retreat / Event</option><option>Government Contract Partnership</option><option>Facility Tour</option></select></div>
+      <div class="fg"><label>Message</label><textarea placeholder="Describe your requirements..."></textarea></div>
+      <button class="btn btn-gold" id="submitBtn" style="width:100%;margin-top:.4rem">Submit Inquiry</button>
+    </div>
+
   </div>
 </section>
 
