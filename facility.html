@@ -11,11 +11,11 @@
     .video-wrap { max-width:600px; margin:0 auto; }
     .video-wrap video { width:100%; border:2px solid var(--gold); display:block; box-shadow:0 0 40px rgba(201,162,39,.15); }
     .video-label { text-align:center; margin-top:1rem; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
-    .fac-photos { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:200px 200px; gap:.4rem; margin-bottom:2.5rem; }
+    .fac-photos { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:300px 220px; gap:.4rem; margin-bottom:2.5rem; }
     .fp { overflow:hidden; position:relative; }
-    .fp img { width:100%; height:100%; object-fit:cover; transition:transform .5s,filter .5s; filter:brightness(.75) saturate(.65) contrast(1.1); }
-    .fp:hover img { transform:scale(1.05); filter:brightness(.9) saturate(.8); }
-    .fp.large { grid-column:span 2; }
+    .fp img { width:100%; height:100%; object-fit:cover; transition:transform .5s,filter .5s; filter:brightness(.82) saturate(.7) contrast(1.1); }
+    .fp:hover img { transform:scale(1.05); filter:brightness(.95) saturate(.9); }
+    .fp.full-width { grid-column:span 3; }
     .fp-lbl { position:absolute; bottom:0; left:0; right:0; padding:.5rem .8rem; background:linear-gradient(to top,rgba(0,0,0,.88),transparent); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); }
     .feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
     .feat-card { background:var(--dark3); border:1px solid var(--border); border-top:2px solid var(--gold); padding:1.4rem; transition:border-color .3s; position:relative; }
@@ -50,7 +50,7 @@
 
 <!-- PAGE HERO -->
 <section class="page-hero section" style="padding-top:110px;padding-bottom:60px;position:relative;overflow:hidden;min-height:45vh;display:flex;align-items:center">
-  <div style="position:absolute;inset:0;background:url('images/Facility.jpg') center 40%/cover no-repeat"></div>
+  <div style="position:absolute;inset:0;background:url('images/legacy-ranch.jpg') center center/cover no-repeat"></div>
   <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(6,6,6,.97) 0%,rgba(6,6,6,.82) 55%,rgba(6,6,6,.5) 100%)"></div>
   <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)"></div>
   <div class="container" style="position:relative;z-index:2">
@@ -88,11 +88,12 @@
       <p class="section-sub">74 Barton Rd, Edgewood, NM 87015 — 30 minutes from the I-25/I-40 interchange. Paved roads to the gate, accessible year-round, with cell and internet access throughout.</p>
     </div>
     <div class="fac-photos reveal">
-      <div class="fp large"><img src="images/facility-aerial.jpg" alt="Legacy Ranch Aerial" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Legacy Ranch — Edgewood, New Mexico</div></div>
-      <div class="fp"><img src="images/Shooting.jpg" alt="Shooting Range" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">488 Acres of Training Land</div></div>
-      <div class="fp"><img src="images/facility-interior.jpg" alt="Legacy Ranch Interior" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Ranch Grounds</div></div>
-      <div class="fp"><img src="images/Shooting.jpg" alt="Shooting Range" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Tactical Shooting Berms</div></div>
-      <div class="fp large"><img src="images/Site-Map.jpg" alt="Training Site Map" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Training Compound & Infrastructure</div></div>
+      <!-- Row 1: Full-width hero aerial -->
+      <div class="fp full-width"><img src="images/legacy-ranch.jpg" alt="Legacy Ranch Aerial" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Legacy Ranch — Edgewood, New Mexico</div></div>
+      <!-- Row 2: Three equal columns -->
+      <div class="fp"><img src="images/488-acres.jpg" alt="488 Acres Training Land" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">488 Acres of Training Land</div></div>
+      <div class="fp"><img src="images/facility-map.jpg" alt="Ranch Site Map" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Ranch Grounds</div></div>
+      <div class="fp"><img src="images/facility-shooting.jpg" alt="Tactical Shooting Berms" onerror="this.style.background='#1a1a1a'"/><div class="fp-lbl">Tactical Shooting Berms</div></div>
     </div>
 
     <!-- FEATURE CARDS -->
