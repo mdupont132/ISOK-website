@@ -144,12 +144,12 @@ img { display: block; max-width: 100%; }
 }
 .navbar.scrolled { padding: .5rem 2.5rem; box-shadow: 0 4px 30px rgba(0,0,0,.5); }
 .navbar-logo { display: flex; align-items: center; gap: 1rem; }
-.navbar-logo img { height: 72px; width: auto; mix-blend-mode: multiply; filter: contrast(1.2); }
+.navbar-logo img { height: 72px; width: auto; filter: invert(1); mix-blend-mode: screen; }
 .navbar-logo svg { height: 72px; width: 72px; flex-shrink: 0; }
 .logo-text { display: flex; flex-direction: row; align-items: center; gap: .8rem; }
 .logo-abbr { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 2rem; color: var(--gold); letter-spacing: .1em; line-height: 1; white-space: nowrap; }
 .logo-divider { width: 1px; height: 36px; background: rgba(201,162,39,.4); flex-shrink: 0; }
-.logo-full { font-size: .72rem; color: #bbb; letter-spacing: .08em; text-transform: uppercase; line-height: 1.5; max-width: 200px; }
+.logo-full { font-size: .72rem; color: #bbb; letter-spacing: .08em; text-transform: uppercase; line-height: 1.5; white-space: nowrap; }
 
 .nav-links { display: flex; align-items: center; gap: 1.6rem; list-style: none; }
 .nav-links a {
