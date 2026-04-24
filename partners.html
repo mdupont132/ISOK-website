@@ -36,6 +36,16 @@
     .vw-detail { background:var(--dark3); border:1px solid var(--border); border-left:3px solid var(--blue-lt); padding:1.4rem; margin-top:1.5rem; }
     .vw-detail h4 { font-family:'Oswald',sans-serif; font-size:.9rem; text-transform:uppercase; color:#7ab3e8; margin-bottom:.5rem; }
     .vw-detail p { font-size:.8rem; color:var(--muted); line-height:1.75; }
+    .vw-section { background:linear-gradient(135deg,#060606 0%,#07101f 100%); border-top:1px solid rgba(37,99,176,.2); border-bottom:1px solid rgba(37,99,176,.2); }
+    .vw-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:center; }
+    .vw-visual { position:relative; height:380px; background:var(--dark3); border:1px solid rgba(37,99,176,.3); overflow:hidden; }
+    .vw-visual img { width:100%; height:100%; object-fit:cover; filter:brightness(.7) saturate(.6); }
+    .vw-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(6,6,6,.9) 0%,transparent 60%); }
+    .vw-badge { position:absolute; top:1rem; left:1rem; background:rgba(29,78,137,.85); border:1px solid var(--blue-lt); padding:.35rem .8rem; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:#7ab3e8; }
+    .vw-stats { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin-top:1.8rem; }
+    .vw-stat { background:var(--dark3); border:1px solid var(--border); border-left:2px solid var(--gold); padding:.85rem 1rem; }
+    .vw-stat .num { font-family:'Oswald',sans-serif; font-weight:700; font-size:1.5rem; color:var(--gold); line-height:1; }
+    .vw-stat .lbl { font-size:.66rem; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; margin-top:.2rem; }
     .clients-row { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
     .client-chip { background:var(--dark4); border:1px solid var(--border); font-family:'Oswald',sans-serif; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); padding:.35rem .9rem; }
     .wdg-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
@@ -114,6 +124,32 @@
       <img src="images/Gladiator-Allegiance-Logo.jpg" alt="Gladiator Allegiance" style="width:70%;max-width:380px;height:auto;object-fit:contain;border:1px solid var(--border);filter:brightness(.85);display:block;margin:0 auto" onerror="this.style.background='#111'"/>
     </div>
   </div>
+
+  <!-- VAPOR WAKE -->
+  <section class="section vw-section">
+    <div class="container">
+      <div class="vw-grid">
+        <div class="vw-visual reveal-left">
+          <img src="images/vapor-wake.jpg" alt="Vapor Wake K-9 Detection" onerror="this.style.background='#0a1020'"/>
+          <div class="vw-overlay"></div>
+          <div class="vw-badge">Auburn University Licensed · VWDC Technology</div>
+        </div>
+        <div class="reveal-right">
+          <div class="tag" style="border-color:rgba(37,99,176,.5);color:#7ab3e8">Signature Capability</div>
+          <h2 class="section-title">Vapor Wake<br/><span>Detection Technology</span></h2>
+          <span class="gold-line"></span>
+          <p style="color:var(--muted);line-height:1.9;font-size:.88rem;margin-bottom:1rem">Our Vapor Wake / Kinetic Detection K-9 program represents the pinnacle of explosive and firearms detection. Through an exclusive licensing agreement with Auburn University, Gladiator Allegiance is one of only <strong style="color:#ccc">three organizations in the world</strong> authorized to deploy this patented system.</p>
+          <p style="color:var(--muted);line-height:1.9;font-size:.88rem;margin-bottom:1.5rem">VWDC canines detect airborne scent particles shed by individuals carrying explosives or firearms — even after the carrier has left the area. A single team can screen hundreds of people simultaneously with zero disruption. Clients include DHS/TSA, Washington D.C. Capitol Police, Amtrak, and NYPD Counter-Terrorism.</p>
+          <div class="vw-stats">
+            <div class="vw-stat reveal delay-1"><div class="num">2 Min</div><div class="lbl">Residual scent detection after carrier departs</div></div>
+            <div class="vw-stat reveal delay-2"><div class="num">100s</div><div class="lbl">People screened simultaneously per team</div></div>
+            <div class="vw-stat reveal delay-3"><div class="num">3</div><div class="lbl">Organizations globally licensed to deploy VWDC</div></div>
+            <div class="vw-stat reveal delay-4"><div class="num">NCS</div><div class="lbl">National Center for Spectator Sports certified</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- IAG -->
   <div class="partner-block reverse reveal" id="iag">
