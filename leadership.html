@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leadership — ISOK Training Academy</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    .team-card { background:var(--dark3); border:1px solid var(--border); overflow:hidden; transition:transform .3s,border-color .3s; }
+    .team-card:hover { transform:translateY(-4px); border-color:rgba(201,162,39,.4); }
+    .team-photo { width:100%; height:280px; object-fit:cover; object-position:center top; filter:brightness(.85) contrast(1.05) saturate(.8); transition:filter .4s; }
+    .team-card:hover .team-photo { filter:brightness(.95) contrast(1.05) saturate(.9); }
+    .team-photo-placeholder { width:100%; height:280px; background:var(--dark4); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+    .team-photo-placeholder svg { opacity:.3; }
+    .team-body { padding:1.4rem; }
+    .team-callsign { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.65rem; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:.15rem; }
+    .team-name { font-family:'Oswald',sans-serif; font-weight:700; font-size:1rem; text-transform:uppercase; color:#fff; margin-bottom:.1rem; letter-spacing:.03em; }
+    .team-title { font-size:.68rem; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.8rem; padding-bottom:.8rem; border-bottom:1px solid var(--border); }
+    .team-bio { font-size:.78rem; color:var(--muted); line-height:1.75; }
+    .team-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.9rem; }
+    .team-tag { background:rgba(201,162,39,.08); border:1px solid rgba(201,162,39,.2); font-family:'Rajdhani',sans-serif; font-weight:600; font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); padding:.15rem .5rem; }
+    .featured-leader { display:grid; grid-template-columns:360px 1fr; gap:3.5rem; align-items:start; margin-bottom:4rem; padding-bottom:4rem; border-bottom:1px solid var(--border); }
+    .featured-photo-wrap { position:relative; }
+    .featured-photo { width:100%; height:480px; object-fit:cover; object-position:center top; filter:brightness(.9) contrast(1.05); border:1px solid var(--border); }
+    .featured-photo-placeholder { width:100%; height:480px; background:var(--dark4); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
+    .featured-corner { position:absolute; top:-1rem; left:-1rem; width:50px; height:50px; border-top:2px solid var(--gold); border-left:2px solid var(--gold); }
+    .featured-badge { position:absolute; bottom:-1rem; right:-1rem; background:var(--gold); color:#000; padding:1rem 1.2rem; text-align:center; min-width:110px; }
+    .featured-badge .bnum { font-family:'Oswald',sans-serif; font-weight:700; font-size:1.8rem; line-height:1; }
+    .featured-badge .blbl { font-size:.58rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    @media(max-width:1024px) { .team-grid { grid-template-columns:1fr 1fr; } .featured-leader { grid-template-columns:1fr; } .featured-photo { height:340px; } }
+    @media(max-width:768px) { .team-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-logo"><img src="images/isok-logo.png" alt="ISOK" onerror="this.style.display='none'"/><div class="logo-text"><span class="logo-abbr">ISOK</span><span class="logo-full">International Special Operations<br/>K-9 Training Academy</span></div></div>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="facility.html">Facility</a></li><li><a href="partners.html">Partners</a></li><li><a href="leadership.html">Leadership</a></li><li><a href="index.html#contact" class="nav-cta">Contact Us</a></li></ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="position:relative;overflow:hidden;min-height:42vh;display:flex;align-items:center;padding-top:100px;padding-bottom:50px">
+  <div style="position:absolute;inset:0;background:url('images/hero-bg.jpg') center 25%/cover no-repeat"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(6,6,6,.97) 0%,rgba(6,6,6,.82) 55%,rgba(6,6,6,.5) 100%)"></div>
+  <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="tag">The People Behind ISOK</div>
+    <h1 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(2.2rem,4vw,4rem);text-transform:uppercase;color:#fff;line-height:1.05">Our <span style="color:var(--gold)">Leadership</span></h1>
+    <p style="font-size:.92rem;color:#999;max-width:580px;margin-top:.8rem;line-height:1.85">Combat veterans, federal operators, and world-class K-9 professionals. Every person on this team has earned their seat through real-world experience in the most demanding operational environments on earth.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--dark)">
+  <div class="container">
+
+    <!-- FEATURED: MIRIAH ALLAMONG -->
+    <div class="featured-leader reveal">
+      <div class="featured-photo-wrap">
+        <div class="featured-corner"></div>
+        <img src="images/miriah.jpg" alt="Miriah Allamong" class="featured-photo" onerror="this.outerHTML='<div class=featured-photo-placeholder><svg width=80 height=80 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="featured-badge"><div class="bnum">25+</div><div class="blbl">Years<br/>Experience</div></div>
+      </div>
+      <div>
+        <div class="tag">Founder & Chief Executive</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem">"Brass"</div>
+        <h2 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(1.8rem,2.5vw,2.8rem);text-transform:uppercase;color:#fff;line-height:1.05">Miriah Allamong</h2>
+        <div style="font-size:.76rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">President & CEO · Gladiator Allegiance LLC · IAG Protection Group · ISOK</div>
+        <p style="color:var(--muted);font-size:.88rem;line-height:1.9;margin-bottom:1rem">Miriah Allamong is a widely recognized leader in the K-9 security industry whose career spans over 25 years across the full spectrum of security services. She is a certified working K-9 handler and trainer with over 20 years of service in foreign conflict zones, collaborating directly with state and federal law enforcement, intelligence agencies, and special operations teams in the global war on terror.</p>
+        <p style="color:var(--muted);font-size:.88rem;line-height:1.9;margin-bottom:1rem">Miriah made history as the first female military contractor EOD Canine handler, completing 8 combat deployments in Afghanistan and Iraq. Her combat-proven expertise solidified her reputation as one of the most accomplished K-9 professionals in the world. She combines this wealth of experience with an unwavering commitment to professionalism, precision, and reliability.</p>
+        <p style="color:var(--muted);font-size:.88rem;line-height:1.9;margin-bottom:1.5rem">As founder of Gladiator Allegiance LLC, IAG Protection Group, and the driving force behind ISOK at Legacy Ranch, Miriah has built the most complete K-9 security ecosystem in the United States — from training and certification through deployment and lifelong K-9 care. She is also a partner in The Sapphire Group, providing diplomatic protection for U.S. embassies and dignitaries worldwide.</p>
+        <div class="team-tags">
+          <span class="team-tag">First Female Military EOD K-9</span>
+          <span class="team-tag">8 Combat Deployments</span>
+          <span class="team-tag">25+ Years K-9 Security</span>
+          <span class="team-tag">VWDC Certified</span>
+          <span class="team-tag">Federal Contractor</span>
+          <span class="team-tag">8(a) · WOSB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAM GRID -->
+    <div style="margin-bottom:2.5rem" class="reveal">
+      <div class="tag">ISOK Management Team</div>
+      <h2 class="section-title">The <span>Operators</span> Behind Every Program</h2>
+      <span class="gold-line"></span>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- ED BALDWIN -->
+      <div class="team-card reveal delay-1">
+        <img src="images/brick.jpg" alt="Ed Baldwin" class="team-photo" onerror="this.outerHTML='<div class=team-photo-placeholder><svg width=60 height=60 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="team-body">
+          <div class="team-callsign">"Brick"</div>
+          <div class="team-name">Ed Baldwin</div>
+          <div class="team-title">Government Intelligence & Operations</div>
+          <p class="team-bio">Marine Corps combat veteran and former U.S. Government PMC with 35 years of service. Multiple deployments in Iraq, Afghanistan, Syria, and Panama. Conducted deep reconnaissance missions, Direct Action Operations, Medical Evacuations, Security Advances, Surveillance, Intelligence Gathering, and Protection of Dignitaries and celebrities. OGA Liaison.</p>
+          <div class="team-tags"><span class="team-tag">USMC Veteran</span><span class="team-tag">PMC</span><span class="team-tag">35 Yrs Service</span><span class="team-tag">TS Cleared</span></div>
+        </div>
+      </div>
+
+      <!-- PETE GENOVESE -->
+      <div class="team-card reveal delay-2">
+        <img src="images/pete.jpg" alt="Pete Genovese" class="team-photo" onerror="this.outerHTML='<div class=team-photo-placeholder><svg width=60 height=60 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="team-body">
+          <div class="team-callsign"></div>
+          <div class="team-name">Pete Genovese</div>
+          <div class="team-title">Director of National K-9 Operations / Head Trainer</div>
+          <p class="team-bio">President of the UPWDA. 18 years of police experience including 14 years in K-9 roles. Specialized in special crimes street division and SWAT/HRT. Maryland Police Training Commission Instructor. Lead instructor for 6 in-house K-9 Academies. Gun Detection Dog Program Initiator. Nationally certified K-9 Handler, Detective, and Trainer.</p>
+          <div class="team-tags"><span class="team-tag">UPWDA President</span><span class="team-tag">14 Yrs K-9</span><span class="team-tag">SWAT</span><span class="team-tag">Master Trainer</span></div>
+        </div>
+      </div>
+
+      <!-- WILLIAM PARKER -->
+      <div class="team-card reveal delay-3">
+        <img src="images/parker.jpg" alt="William Parker" class="team-photo" onerror="this.outerHTML='<div class=team-photo-placeholder><svg width=60 height=60 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="team-body">
+          <div class="team-callsign"></div>
+          <div class="team-name">William Parker</div>
+          <div class="team-title">Director, Vapor Wake Canine Operations</div>
+          <p class="team-bio">50+ years of K-9 program development. Established pioneering explosive detection programs at major airports. Transformed Amtrak's National Explosives Detection Canine Program. K-9 Commander, Metropolitan Washington Airport Authority. Led U.S. Army's first EOD K-9 team in Operation Desert Shield. Congressional expert witness on national security and perimeter protection.</p>
+          <div class="team-tags"><span class="team-tag">50 Yrs K-9</span><span class="team-tag">EOD Expert</span><span class="team-tag">Vapor Wake</span><span class="team-tag">Congress Testimony</span></div>
+        </div>
+      </div>
+
+      <!-- RICK DE LEON -->
+      <div class="team-card reveal delay-4">
+        <img src="images/rick.jpg" alt="Rick De Leon" class="team-photo" onerror="this.outerHTML='<div class=team-photo-placeholder><svg width=60 height=60 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="team-body">
+          <div class="team-callsign">"Mexican"</div>
+          <div class="team-name">Rick De Leon</div>
+          <div class="team-title">Director of K-9 Global Operations</div>
+          <p class="team-bio">Leads global K-9 deployment strategy and operational coordination across domestic and international security engagements. Coordinates canine teams across Gladiator Allegiance and IAG partner organizations worldwide — ensuring program standards, handler certification, and operational readiness at every deployment site.</p>
+          <div class="team-tags"><span class="team-tag">Global K-9 Ops</span><span class="team-tag">Deployment Strategy</span><span class="team-tag">TS Cleared</span></div>
+        </div>
+      </div>
+
+      <!-- DR. BLAS CATALANI -->
+      <div class="team-card reveal delay-5">
+        <img src="images/blas.jpg" alt="Dr. Blas Catalani" class="team-photo" onerror="this.outerHTML='<div class=team-photo-placeholder><svg width=60 height=60 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="team-body">
+          <div class="team-callsign"></div>
+          <div class="team-name">Dr. Blas Catalani, MD</div>
+          <div class="team-title">VP, Medical Operations & Logistics · MPH, FASA</div>
+          <p class="team-bio">Physician anesthesiologist with expertise in trauma care, high-risk surgery, orthopedics, and perioperative pain management. Extensive non-clinical experience in medical logistics, throughput optimization, technology integration, and workforce efficiency. Dedicated to advancing patient care and supporting counterterrorism and organizational development missions.</p>
+          <div class="team-tags"><span class="team-tag">MD / MPH / FASA</span><span class="team-tag">Trauma Care</span><span class="team-tag">Medical Logistics</span></div>
+        </div>
+      </div>
+
+      <!-- MAXIM FISHER -->
+      <div class="team-card reveal delay-6">
+        <img src="images/max.jpg" alt="Maxim Fisher" class="team-photo" onerror="this.outerHTML='<div class=team-photo-placeholder><svg width=60 height=60 viewBox=0 0 24 24 fill=none stroke=%23444 stroke-width=1><circle cx=12 cy=8 r=4/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7/></svg></div>'"/>
+        <div class="team-body">
+          <div class="team-callsign"></div>
+          <div class="team-name">Maxim Fisher</div>
+          <div class="team-title">Director of Government Relations & Middle East Advisor</div>
+          <p class="team-bio">Senior advisor for government relations and Faith & Freedom Coalition. Extensive background in investigatory research, lobbying, and political consultation. Native Russian speaker with French proficiency. Maintains strong ties with U.S. government personnel and the Israeli Defense Force. Educates members of Congress on the Israeli-Hamas conflict and counterterrorism strategy.</p>
+          <div class="team-tags"><span class="team-tag">Gov Relations</span><span class="team-tag">IDF Liaison</span><span class="team-tag">Counterterrorism</span><span class="team-tag">Russian Speaker</span></div>
+        </div>
+      </div>
+
+    </div><!-- /team-grid -->
+
+    <!-- CALLOUT -->
+    <div class="reveal" style="margin-top:3.5rem;padding:2rem 2.5rem;background:linear-gradient(135deg,var(--dark2),#07101a);border:1px solid var(--border);border-left:3px solid var(--gold)">
+      <h3 style="font-family:'Oswald',sans-serif;font-weight:600;font-size:1.1rem;text-transform:uppercase;color:#fff;margin-bottom:.6rem">A World-Class Coalition</h3>
+      <p style="font-size:.84rem;color:var(--muted);line-height:1.85;max-width:860px">Allamong, Parker, Baldwin, and Genovese have established a world-class K-9 executive and security management team based on past performances in their respective fields and close relations with legendary K-9 trainers, certifiers, breeders of purpose-bred dogs, and key Tier 1 special operators. The members of the immediate and expanded team — individually and collectively — have managed some of the largest working dog programs ever mobilized, both in the U.S. and in global conflict zones. All ISOK personnel hold Top Secret clearance.</p>
+      <div style="margin-top:1.5rem"><a href="index.html#contact" class="btn btn-gold">Contact Our Team →</a></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="blue-bar"></div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="images/isok-logo.png" alt="ISOK" style="height:50px;width:auto" onerror="this.style.display='none'"/><p>International Special Operations Law Enforcement – Training & K-9 Academy. Legacy Ranch, Edgewood, NM.</p><div class="footer-motto">Those Who Dare · Respect All · Fear None</div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="facility.html">The Facility</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="leadership.html">Leadership</a></li></ul></div>
+      <div class="footer-col"><h5>Leadership</h5><ul><li><a href="#">Miriah Allamong</a></li><li><a href="#">Ed Baldwin</a></li><li><a href="#">Pete Genovese</a></li><li><a href="#">William Parker</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:2408188987">240-818-8987</a></li><li><a href="mailto:miriah@isoktraining.com">miriah@isoktraining.com</a></li><li><a href="index.html#contact">Training Inquiries</a></li><li><a href="https://wardogguardians.org/" target="_blank">War Dog Guardians ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 ISOK — International Special Operations K-9 Training Academy · 74 Barton Rd, Edgewood, NM 87015</span><span><a href="https://isokacademy.com">isokacademy.com</a></span></div>
+  </div>
+</footer>
+<script src="animations.js"></script>
+</body>
+</html>
