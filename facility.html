@@ -12,6 +12,7 @@
     .video-wrap video { width:100%; border:2px solid var(--gold); display:block; box-shadow:0 0 40px rgba(201,162,39,.15); }
     .video-label { text-align:center; margin-top:1rem; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
     .fac-photos { display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows:260px 260px; gap:.5rem; margin-bottom:2.5rem; }
+    .fp.tall { grid-row:span 2; }
     .fp.wide { grid-column:span 2; }
     .fp { overflow:hidden; position:relative; }
     .fp img { width:100%; height:100%; object-fit:cover; object-position:center; transition:transform .4s; }
@@ -87,13 +88,11 @@
       <span class="gold-line"></span>
     </div>
     <div class="fac-photos reveal">
-      <!-- Row 1: three equal columns -->
-      <div class="fp"><img src="images/tactical-ops.jpg" alt="Tactical Operations" onerror="this.style.background='#1a1a1a'"/></div>
-      <div class="fp"><img src="images/K9 sliding down.jpg" alt="K9 Aerial Operations" onerror="this.style.background='#1a1a1a'"/></div>
-      <div class="fp"><img src="images/legacy-ranchh.jpg" alt="Legacy Ranch Grounds" onerror="this.style.background='#1a1a1a'"/></div>
-      <!-- Row 2: wide + narrow -->
-      <div class="fp wide"><img src="images/Legacy-ranch.jpg" alt="Legacy Ranch Aerial" onerror="this.style.background='#1a1a1a'"/></div>
-      <div class="fp"><img src="images/488 acres.jpg" alt="488 Acres of Training Land" onerror="this.style.background='#1a1a1a'"/></div>
+      <!-- Col 1 row 1 --> <div class="fp"><img src="images/tactical-ops.jpg" alt="Tactical Operations" onerror="this.style.background='#1a1a1a'"/></div>
+      <!-- Col 2 rows 1+2 tall --> <div class="fp tall"><img src="images/K9 sliding down.jpg" alt="K9 Aerial Operations" onerror="this.style.background='#1a1a1a'"/></div>
+      <!-- Col 3 row 1 --> <div class="fp"><img src="images/facility-3.jpg" alt="Facility Interior" onerror="this.style.background='#1a1a1a'"/></div>
+      <!-- Col 1 row 2 --> <div class="fp"><img src="images/Legacy-ranch.jpg" alt="Legacy Ranch Aerial" onerror="this.style.background='#1a1a1a'"/></div>
+      <!-- Col 3 row 2 --> <div class="fp"><img src="images/488 acres.jpg" alt="488 Acres of Training Land" onerror="this.style.background='#1a1a1a'"/></div>
     </div>
 
     <!-- FEATURE CARDS -->
