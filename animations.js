@@ -96,12 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-type]').forEach(el => typeObserver.observe(el));
 
-  // ── PARALLAX HERO ─────────────────────────────────
+  // ── PARALLAX HERO (subtle, no zoom) ───────────────
   const parallaxEl = document.querySelector('.parallax-bg');
   if (parallaxEl) {
     window.addEventListener('scroll', () => {
-      const offset = window.scrollY * 0.4;
-      parallaxEl.style.transform = `translateY(${offset}px)`;
+      const offset = window.scrollY * 0.12;
+      parallaxEl.style.backgroundPositionY = `calc(30% + ${offset}px)`;
     }, { passive: true });
   }
 
