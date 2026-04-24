@@ -30,20 +30,23 @@
     .ticker-inner { display:inline-block; animation:ticker 70s linear infinite; font-family:'Rajdhani',sans-serif; font-weight:700; font-size:1rem; letter-spacing:.2em; text-transform:uppercase; color:#000; }
     @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     /* LOGO MARQUEE */
-    .logo-marquee-section { background:var(--dark2); padding:50px 0 40px; overflow:hidden; }
+    .logo-marquee-section { background:#f5f5f5; padding:50px 0 40px; overflow:hidden; }
     .logo-marquee-header { padding:0 3rem; margin-bottom:2.5rem; }
+    .logo-marquee-header .tag { color:#555; border-color:rgba(0,0,0,.2); background:rgba(0,0,0,.04); }
+    .logo-marquee-header .section-title { color:#111; }
+    .logo-marquee-header .section-title span { color:var(--gold); }
     .logo-marquee-wrap { overflow:hidden; position:relative; width:100%; }
     .logo-marquee-wrap::before, .logo-marquee-wrap::after {
       content:''; position:absolute; top:0; bottom:0; width:100px; z-index:2; pointer-events:none;
     }
-    .logo-marquee-wrap::before { left:0; background:linear-gradient(to right,var(--dark2),transparent); }
-    .logo-marquee-wrap::after { right:0; background:linear-gradient(to left,var(--dark2),transparent); }
+    .logo-marquee-wrap::before { left:0; background:linear-gradient(to right,#f5f5f5,transparent); }
+    .logo-marquee-wrap::after { right:0; background:linear-gradient(to left,#f5f5f5,transparent); }
     .logo-marquee-inner { display:flex; align-items:center; gap:0; width:max-content; animation:logoMarquee 50s linear infinite; }
     .logo-marquee-inner:hover { animation-play-state:paused; }
     .logo-item { display:flex; align-items:center; justify-content:center; padding:0 2.5rem; height:80px; flex-shrink:0; }
-    .logo-item img { height:60px; width:auto; max-width:120px; object-fit:contain; opacity:.65; filter:grayscale(20%); transition:opacity .3s, filter .3s, transform .3s; }
-    .logo-item img:hover { opacity:1; filter:grayscale(0%); transform:scale(1.1); }
-    .logo-divider-line { width:1px; height:40px; background:var(--border); flex-shrink:0; }
+    .logo-item img { height:60px; width:auto; max-width:120px; object-fit:contain; opacity:.85; filter:grayscale(0%); transition:opacity .3s, transform .3s; }
+    .logo-item img:hover { opacity:1; transform:scale(1.1); }
+    .logo-divider-line { width:1px; height:40px; background:#ccc; flex-shrink:0; }
     @keyframes logoMarquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
     .mission-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
